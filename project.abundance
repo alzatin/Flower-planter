@@ -253,7 +253,8 @@
             },
             "unitsKey": "Inches",
             "fileTypeVersion": 1,
-            "compiledBom": []
+            "compiledBom": [],
+            "tagDictionary": {}
         },
         {
             "atomType": "Move",
@@ -337,8 +338,8 @@
         {
             "atomType": "Assembly",
             "name": "Assembly",
-            "x": 0.564625850340136,
-            "y": 0.4036697247706422,
+            "x": 0.5733722060252673,
+            "y": 0.40978593272171254,
             "uniqueID": 1743525974042,
             "ioValues": [
                 {
@@ -355,8 +356,8 @@
         {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.6967930029154519,
-            "y": 0.7308868501529051,
+            "x": 0.7220602526724975,
+            "y": 0.382262996941896,
             "uniqueID": 1743526006817,
             "ioValues": [
                 {
@@ -419,5 +420,6 @@
     "unitsKey": "Inches",
     "fileTypeVersion": 1,
     "compiledBom": {},
+    "tagDictionary": {},
     "filetypeVersion": 1
 }
