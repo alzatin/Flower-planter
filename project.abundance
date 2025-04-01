@@ -29,8 +29,8 @@
         {
             "atomType": "Circle",
             "name": "Circle",
-            "x": 0.28960155490767736,
-            "y": 0.617737003058104,
+            "x": 0.19922254616132168,
+            "y": 0.5932721712538226,
             "uniqueID": 1743522041695,
             "ioValues": [
                 {
@@ -41,33 +41,15 @@
             "description": "Creates a new circle."
         },
         {
-            "atomType": "Extrude",
-            "name": "Extrude",
-            "x": 0.4849368318756074,
-            "y": 0.7767584097859328,
-            "uniqueID": 1743522205499,
-            "ioValues": [
-                {
-                    "name": "geometry",
-                    "ioValue": 1743522451130
-                },
-                {
-                    "name": "height",
-                    "ioValue": 10
-                }
-            ],
-            "description": "Extrudes a 2D shape. Input can be negitive. "
-        },
-        {
             "atomType": "GitHubMolecule",
             "name": "RotatePattern",
-            "x": 0.620019436345967,
-            "y": 0.6697247706422018,
+            "x": 0.47619047619047616,
+            "y": 0.7920489296636086,
             "uniqueID": 1743522290646,
             "ioValues": [
                 {
                     "name": "Shape",
-                    "ioValue": 1743522205499
+                    "ioValue": 1743522451130
                 },
                 {
                     "name": "Number",
@@ -171,7 +153,7 @@
                     "ioValues": [
                         {
                             "name": "Shape",
-                            "ioValue": 1743522205499
+                            "ioValue": 1743522451130
                         },
                         {
                             "name": "Number",
@@ -276,8 +258,8 @@
         {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.3974732750242954,
-            "y": 0.599388379204893,
+            "x": 0.3488824101068999,
+            "y": 0.7033639143730887,
             "uniqueID": 1743522451130,
             "ioValues": [
                 {
@@ -298,57 +280,6 @@
                 }
             ],
             "description": "Moves a shape laterally in X, Y, Z."
-        },
-        {
-            "atomType": "Circle",
-            "name": "Circle",
-            "x": 0.22643343051506318,
-            "y": 0.3119266055045871,
-            "uniqueID": 1743522747981,
-            "ioValues": [
-                {
-                    "name": "diameter",
-                    "ioValue": 10
-                }
-            ],
-            "description": "Creates a new circle."
-        },
-        {
-            "atomType": "Extrude",
-            "name": "Extrude",
-            "x": 0.5714285714285714,
-            "y": 0.3180428134556575,
-            "uniqueID": 1743522752035,
-            "ioValues": [
-                {
-                    "name": "geometry",
-                    "ioValue": 1743522747981
-                },
-                {
-                    "name": "height",
-                    "ioValue": 10
-                }
-            ],
-            "description": "Extrudes a 2D shape. Input can be negitive. "
-        },
-        {
-            "atomType": "Fusion",
-            "name": "Fusion",
-            "x": 0.7706511175898931,
-            "y": 0.4923547400611621,
-            "uniqueID": 1743522757643,
-            "ioValues": [
-                {
-                    "name": "Shape 1",
-                    "ioValue": 1743522752035
-                },
-                {
-                    "name": "Shape 2",
-                    "ioValue": 1743522290646
-                }
-            ],
-            "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape",
-            "unionType": "Fusion"
         },
         {
             "atomType": "Input",
@@ -388,6 +319,64 @@
             ],
             "description": "Defines a mathematical equation. Edit the output field to add or remove inputs.",
             "currentEquation": "x + y"
+        },
+        {
+            "atomType": "Circle",
+            "name": "Circle",
+            "x": 0.3109815354713314,
+            "y": 0.28440366972477066,
+            "uniqueID": 1743525963582,
+            "ioValues": [
+                {
+                    "name": "diameter",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Creates a new circle."
+        },
+        {
+            "atomType": "Assembly",
+            "name": "Assembly",
+            "x": 0.564625850340136,
+            "y": 0.4036697247706422,
+            "uniqueID": 1743525974042,
+            "ioValues": [
+                {
+                    "name": "Shape 2",
+                    "ioValue": 1743522290646
+                },
+                {
+                    "name": "Shape 3",
+                    "ioValue": 1743525963582
+                }
+            ],
+            "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape"
+        },
+        {
+            "atomType": "Move",
+            "name": "Move",
+            "x": 0.6967930029154519,
+            "y": 0.7308868501529051,
+            "uniqueID": 1743526006817,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": 1743525974042
+                },
+                {
+                    "name": "xDist",
+                    "ioValue": 0
+                },
+                {
+                    "name": "yDist",
+                    "ioValue": 0
+                },
+                {
+                    "name": "zDist",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Moves a shape laterally in X, Y, Z."
         }
     ],
     "allConnectors": [
@@ -399,53 +388,32 @@
             "ap2ID": 1743522451130
         },
         {
-            "ap1Name": "geometry",
-            "ap2Name": "Shape",
-            "ap2Primary": false,
-            "ap1ID": 1743522205499,
-            "ap2ID": 1743522290646
-        },
-        {
             "ap1Name": "Geometry",
             "ap2Name": "Shape 2",
             "ap2Primary": false,
             "ap1ID": 1743522290646,
-            "ap2ID": 1743522757643
+            "ap2ID": 1743525974042
         },
         {
             "ap1Name": "geometry",
-            "ap2Name": "geometry",
-            "ap2Primary": true,
+            "ap2Name": "Shape",
+            "ap2Primary": false,
             "ap1ID": 1743522451130,
-            "ap2ID": 1743522205499
+            "ap2ID": 1743522290646
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 3",
+            "ap2Primary": false,
+            "ap1ID": 1743525963582,
+            "ap2ID": 1743525974042
         },
         {
             "ap1Name": "geometry",
             "ap2Name": "geometry",
             "ap2Primary": true,
-            "ap1ID": 1743522747981,
-            "ap2ID": 1743522752035
-        },
-        {
-            "ap1Name": "geometry",
-            "ap2Name": "Shape 1",
-            "ap2Primary": false,
-            "ap1ID": 1743522752035,
-            "ap2ID": 1743522757643
-        },
-        {
-            "ap1Name": "number or geometry",
-            "ap2Name": "height",
-            "ap2Primary": false,
-            "ap1ID": 1743522844097,
-            "ap2ID": 1743522205499
-        },
-        {
-            "ap1Name": "number or geometry",
-            "ap2Name": "height",
-            "ap2Primary": false,
-            "ap1ID": 1743522844097,
-            "ap2ID": 1743522752035
+            "ap1ID": 1743525974042,
+            "ap2ID": 1743526006817
         }
     ],
     "unitsKey": "Inches",
