@@ -7,7 +7,7 @@
     "ioValues": [
         {
             "name": "height",
-            "ioValue": 10
+            "ioValue": 15
         },
         {
             "name": "diameter",
@@ -220,7 +220,7 @@
                 },
                 {
                     "name": "height",
-                    "ioValue": 10
+                    "ioValue": 15
                 }
             ],
             "description": "Extrudes a 2D shape. Input can be negitive. "
@@ -483,7 +483,7 @@
                 },
                 {
                     "name": "height",
-                    "ioValue": 10
+                    "ioValue": 15
                 }
             ],
             "description": "Extrudes a 2D shape. Input can be negitive. "
@@ -503,6 +503,20 @@
             "ap2Primary": false,
             "ap1ID": 1743522451130,
             "ap2ID": 1743599728922
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "height",
+            "ap2Primary": false,
+            "ap1ID": 1743522844097,
+            "ap2ID": 1743599599290
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "height",
+            "ap2Primary": false,
+            "ap1ID": 1743522844097,
+            "ap2ID": 1743602573206
         },
         {
             "ap1Name": "geometry",
