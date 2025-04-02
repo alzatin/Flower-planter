@@ -29,13 +29,13 @@
         {
             "atomType": "Circle",
             "name": "Circle",
-            "x": 0.19922254616132168,
-            "y": 0.5932721712538226,
+            "x": 0.20310981535471334,
+            "y": 0.581039755351682,
             "uniqueID": 1743522041695,
             "ioValues": [
                 {
                     "name": "diameter",
-                    "ioValue": 4
+                    "ioValue": 5
                 }
             ],
             "description": "Creates a new circle."
@@ -43,8 +43,8 @@
         {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.30903790087463556,
-            "y": 0.7798165137614679,
+            "x": 0.30709426627793973,
+            "y": 0.7737003058103975,
             "uniqueID": 1743522451130,
             "ioValues": [
                 {
@@ -122,8 +122,8 @@
         {
             "atomType": "Assembly",
             "name": "Assembly",
-            "x": 0.49173955296404276,
-            "y": 0.42201834862385323,
+            "x": 0.5014577259475219,
+            "y": 0.3577981651376147,
             "uniqueID": 1743525974042,
             "ioValues": [
                 {
@@ -140,8 +140,8 @@
         {
             "atomType": "Move",
             "name": "Move",
-            "x": 0.6316812439261419,
-            "y": 0.33944954128440363,
+            "x": 0.6209912536443148,
+            "y": 0.14678899082568808,
             "uniqueID": 1743526006817,
             "ioValues": [
                 {
@@ -166,8 +166,8 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.7201166180758019,
-            "y": 0.672782874617737,
+            "x": 0.8270165208940718,
+            "y": 0.33944954128440363,
             "uniqueID": 1743597910664,
             "ioValues": [
                 {
@@ -190,8 +190,8 @@
         {
             "atomType": "GitHubMolecule",
             "name": "RotatePattern",
-            "x": 0.39455782312925175,
-            "y": 0.7247706422018348,
+            "x": 0.3965014577259475,
+            "y": 0.7003058103975535,
             "uniqueID": 1743598149903,
             "ioValues": [
                 {
@@ -401,6 +401,52 @@
             "unitsKey": "Inches",
             "fileTypeVersion": 1,
             "compiledBom": []
+        },
+        {
+            "atomType": "Loft",
+            "name": "Loft",
+            "x": 0.717201166180758,
+            "y": 0.6513761467889908,
+            "uniqueID": 1743599079563,
+            "ioValues": [
+                {
+                    "name": "Shape 3",
+                    "ioValue": 1743599100061
+                },
+                {
+                    "name": "Shape 4",
+                    "ioValue": ""
+                },
+                {
+                    "name": "Shape 3",
+                    "ioValue": 1743599100061
+                },
+                {
+                    "name": "Shape 4",
+                    "ioValue": ""
+                }
+            ],
+            "description": "Joins two or more shapes into a single solid by filling in the space between them. Also called 'hull'",
+            "closedSelection": 0
+        },
+        {
+            "atomType": "Fusion",
+            "name": "Fusion",
+            "x": 0.5519922254616132,
+            "y": 0.6207951070336392,
+            "uniqueID": 1743599100061,
+            "ioValues": [
+                {
+                    "name": "Shape 2",
+                    "ioValue": 1743598149903
+                },
+                {
+                    "name": "Shape 3",
+                    "ioValue": 1743525963582
+                }
+            ],
+            "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape",
+            "unionType": "Fusion"
         }
     ],
     "allConnectors": [
@@ -427,6 +473,13 @@
         },
         {
             "ap1Name": "geometry",
+            "ap2Name": "Shape 3",
+            "ap2Primary": false,
+            "ap1ID": 1743525963582,
+            "ap2ID": 1743599100061
+        },
+        {
+            "ap1Name": "geometry",
             "ap2Name": "geometry",
             "ap2Primary": true,
             "ap1ID": 1743525974042,
@@ -445,6 +498,20 @@
             "ap2Primary": false,
             "ap1ID": 1743598149903,
             "ap2ID": 1743525974042
+        },
+        {
+            "ap1Name": "Geometry",
+            "ap2Name": "Shape 2",
+            "ap2Primary": false,
+            "ap1ID": 1743598149903,
+            "ap2ID": 1743599100061
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 3",
+            "ap2Primary": false,
+            "ap1ID": 1743599100061,
+            "ap2ID": 1743599079563
         }
     ],
     "unitsKey": "Inches",
