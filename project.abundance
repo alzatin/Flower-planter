@@ -23,7 +23,12 @@
             "x": 0.98,
             "y": 0.5,
             "uniqueID": 1743522008637,
-            "ioValues": [],
+            "ioValues": [
+                {
+                    "name": "number or geometry",
+                    "ioValue": 1743599100061
+                }
+            ],
             "description": "Connect geometry here to make it available in the next level up. "
         },
         {
@@ -184,46 +189,19 @@
             "code": " \n      //Inputs:[inputShape, dist, height]\n      //This defines the molecules inputs and creates variables with the same names which can be referenced in the code\n      \n      //Takes the address and gets the shape from the library\n      let importedShape = library[inputShape]\n      \n      //This makes a new copy of of the shape (to prevent garbage collection issues),\n      //and moves it in the X direction. Note that this will not work if the input is an assembly\n      let shape1 = actOnLeafs(importedShape, (leaf) => {\n        return {\n          geometry: [leaf.geometry[0].clone().scale(1.3)],\n          tags: leaf.tags,\n          plane: leaf.plane,\n          color: leaf.color,\n          bom: leaf.bom,\n        };\n      })\n      \n      \n      return shape1\n      \n      \n          /**\n          To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n          If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n          Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n          https://replicad.xyz/docs/introapp/UserGuide.html \n          Return a replicad object that includes geometry, color, tags and plane. \n      \n      \n          Example Code Atom:\n      \n            Inputs:[shape, x];\n      \n            let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n      \n            return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      \n            - See more examples at _______ \n      \n      \n          */\n      "
         },
         {
-            "atomType": "Loft",
-            "name": "Loft",
-            "x": 0.7094266277939747,
-            "y": 0.7951070336391437,
-            "uniqueID": 1743599079563,
-            "ioValues": [
-                {
-                    "name": "Shape 3",
-                    "ioValue": 1743599100061
-                },
-                {
-                    "name": "Shape 4",
-                    "ioValue": ""
-                },
-                {
-                    "name": "Shape 3",
-                    "ioValue": 1743599100061
-                },
-                {
-                    "name": "Shape 4",
-                    "ioValue": ""
-                }
-            ],
-            "description": "Joins two or more shapes into a single solid by filling in the space between them. Also called 'hull'",
-            "closedSelection": 0
-        },
-        {
             "atomType": "Fusion",
             "name": "Fusion",
-            "x": 0.5510204081632653,
-            "y": 0.7584097859327217,
+            "x": 0.6141885325558795,
+            "y": 0.6116207951070336,
             "uniqueID": 1743599100061,
             "ioValues": [
                 {
-                    "name": "Shape 2",
-                    "ioValue": 1743599728922
+                    "name": "Shape 4",
+                    "ioValue": 1743602573206
                 },
                 {
-                    "name": "Shape 3",
-                    "ioValue": 1743525963582
+                    "name": "Shape 5",
+                    "ioValue": 1743599599290
                 }
             ],
             "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape",
@@ -232,8 +210,8 @@
         {
             "atomType": "Extrude",
             "name": "Extrude",
-            "x": 0.3965014577259475,
-            "y": 0.21406727828746175,
+            "x": 0.3819241982507289,
+            "y": 0.308868501529052,
             "uniqueID": 1743599599290,
             "ioValues": [
                 {
@@ -256,7 +234,7 @@
             "ioValues": [
                 {
                     "name": "geometry",
-                    "ioValue": ""
+                    "ioValue": 1743599100061
                 },
                 {
                     "name": "Resolution (dpi)",
@@ -280,8 +258,8 @@
         {
             "atomType": "GitHubMolecule",
             "name": "RotatePattern",
-            "x": 0.3867832847424684,
-            "y": 0.5596330275229358,
+            "x": 0.4159378036929058,
+            "y": 0.8501529051987767,
             "uniqueID": 1743599728922,
             "ioValues": [
                 {
@@ -491,6 +469,24 @@
             "unitsKey": "Inches",
             "fileTypeVersion": 1,
             "compiledBom": []
+        },
+        {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.41982507288629733,
+            "y": 0.5626911314984709,
+            "uniqueID": 1743602573206,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": 1743599728922
+                },
+                {
+                    "name": "height",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Extrudes a 2D shape. Input can be negitive. "
         }
     ],
     "allConnectors": [
@@ -507,13 +503,6 @@
             "ap2Primary": false,
             "ap1ID": 1743522451130,
             "ap2ID": 1743599728922
-        },
-        {
-            "ap1Name": "geometry",
-            "ap2Name": "Shape 3",
-            "ap2Primary": false,
-            "ap1ID": 1743525963582,
-            "ap2ID": 1743599100061
         },
         {
             "ap1Name": "geometry",
@@ -538,10 +527,17 @@
         },
         {
             "ap1Name": "geometry",
-            "ap2Name": "Shape 3",
+            "ap2Name": "geometry",
             "ap2Primary": false,
             "ap1ID": 1743599100061,
-            "ap2ID": 1743599079563
+            "ap2ID": 1743599620740
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "number or geometry",
+            "ap2Primary": false,
+            "ap1ID": 1743599100061,
+            "ap2ID": 1743522008637
         },
         {
             "ap1Name": "geometry",
@@ -551,10 +547,24 @@
             "ap2ID": 1743525974042
         },
         {
-            "ap1Name": "Geometry",
-            "ap2Name": "Shape 2",
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 5",
             "ap2Primary": false,
+            "ap1ID": 1743599599290,
+            "ap2ID": 1743599100061
+        },
+        {
+            "ap1Name": "Geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
             "ap1ID": 1743599728922,
+            "ap2ID": 1743602573206
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 4",
+            "ap2Primary": false,
+            "ap1ID": 1743602573206,
             "ap2ID": 1743599100061
         }
     ],
